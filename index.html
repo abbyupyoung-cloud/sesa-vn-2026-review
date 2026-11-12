@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>2026 名單與行銷策略回顧</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap">
+<style>
+/* Layout: single reading column, findings first, then strategy timeline, then actions */
+:root{
+  --bg:#f5f8f9; --surface:#ffffff; --ink:#14232b; --muted:#5b6d76; --line:#d9e2e6;
+  --accent:#0f7c8c; --accent-soft:#d6eef1; --rich:#0f7c8c; --mid:#7fb9c2; --low:#e3c48a; --warn:#b4542d; --expo:#2f4f9e;
+  --f-body:"Noto Sans TC",system-ui,-apple-system,"Microsoft JhengHei",sans-serif;
+  --f-num:"Space Grotesk","Noto Sans TC",system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0f171b; --surface:#16222807; --surface:#17232a; --ink:#e4edf0; --muted:#97a9b1; --line:#2a3a42;
+  --accent:#4fc0cf; --accent-soft:#173a40; --rich:#4fc0cf; --mid:#2f7680; --low:#b8954f; --warn:#e58a62; --expo:#8aa6ef; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f171b; --surface:#17232a; --ink:#e4edf0; --muted:#97a9b1; --line:#2a3a42;
+  --accent:#4fc0cf; --accent-soft:#173a40; --rich:#4fc0cf; --mid:#2f7680; --low:#b8954f; --warn:#e58a62; --expo:#8aa6ef; color-scheme:dark}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15.5px;line-height:1.7}
+.wrap{max-width:860px;margin:0 auto;padding-block:40px 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:44px}
+h1,h2,h3{text-wrap:balance;line-height:1.3;margin:0}
+h1{font-size:1.9rem}
+h2{font-size:1.35rem}
+h3{font-size:1.05rem}
+p{margin:0}
+.eyebrow{font-size:.78rem;letter-spacing:.08em;color:var(--accent);font-weight:700}
+.lede{color:var(--muted);max-width:65ch}
+header{display:flex;flex-direction:column;gap:10px}
+section{display:flex;flex-direction:column;gap:16px}
+.answer{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:20px 22px;display:flex;flex-direction:column;gap:14px}
+.answer ol{margin:0;padding-left:1.3em;display:flex;flex-direction:column;gap:10px}
+.answer b{color:var(--accent)}
+.num{font-family:var(--f-num);font-variant-numeric:tabular-nums}
+.chart{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px;overflow-x:auto}
+.chart svg{display:block;width:100%;min-width:560px;height:auto}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:.82rem;color:var(--muted);margin-top:8px}
+.legend i{display:inline-block;width:11px;height:11px;border-radius:2px;margin-right:6px;vertical-align:-1px}
+.note{font-size:.84rem;color:var(--muted)}
+table{border-collapse:collapse;width:100%;font-size:.88rem;min-width:600px}
+th,td{padding:7px 8px;border-bottom:1px solid var(--line);text-align:right;white-space:nowrap}
+th:first-child,td:first-child{text-align:left}
+thead th{color:var(--muted);font-weight:500;font-size:.8rem}
+td{font-family:var(--f-num);font-variant-numeric:tabular-nums}
+tr.hl td{background:var(--accent-soft)}
+.tbl{overflow-x:auto;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:6px 12px}
+.timeline{display:flex;flex-direction:column;gap:0;border-left:2px solid var(--line);margin-left:6px}
+.q{position:relative;padding:0 0 26px 22px;display:flex;flex-direction:column;gap:8px}
+.q::before{content:"";position:absolute;left:-7px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--accent)}
+.q .meta{display:flex;flex-wrap:wrap;gap:8px;align-items:baseline}
+.q .tag{font-family:var(--f-num);font-weight:700;color:var(--accent)}
+.q .budget{font-size:.82rem;color:var(--muted)}
+.q ul{margin:0;padding-left:1.15em;display:flex;flex-direction:column;gap:4px}
+.pivot{color:var(--warn);font-weight:700}
+.actions{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.act{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.act h3{font-size:.98rem}
+.act p{font-size:.9rem;color:var(--muted)}
+footer{font-size:.8rem;color:var(--muted);border-top:1px solid var(--line);padding-top:16px;display:flex;flex-direction:column;gap:4px}
+</style>
+
+<div class="wrap">
+<header>
+  <span class="eyebrow">SESA 越南 · B2B 加盟名單 · 2026/1 – 2026/11/11</span>
+  <h1>2026 名單與行銷策略回顧</h1>
+</header>
+
+<section>
+  <h2>結論</h2>
+  <div class="answer">
+    <ol>
+      <li><b>客人的預算沒有變少。</b>FB 名單中預算 3 億越盾以上的比例，1–2 月合計 <span class="num">15%</span>，10–11 月合計 <span class="num">23%</span>。1 tỷ（10 億）以上客人每月 0–7 位，1–2 月合計 7 位、10–11 月合計 5 位，前後差不多。</li>
+      <li><b>成交 8 組，其中 5 組來自 Facebook。</b>官方、業務來源、展覽現場各 1 組。</li>
+      <li><b>2026 預算 2B 占 57%，方向是重質不重量。</b>從 2025 年 11 月加入簡訊驗證、Q3 廣告直接寫出「4 億開店方案」，都是為了篩選出有預算的客人。</li>    </ol>
+  </div>
+  <p class="note">潛力客戶的定義：C1 以上（A、B1–B3、C1）。</p>
+</section>
+
+<section>
+  <h2>1. 2B／2C 廣告預算比例</h2>
+  <div class="tbl">
+  <table style="min-width:0">
+    <thead><tr><th>2026 全年（NT$，含佣稅）</th><th>金額</th><th>比例</th></tr></thead>
+    <tbody>
+      <tr class="hl"><td><b>2B 加盟主名單</b></td><td><b>825,000</b></td><td><b>57%</b></td></tr>
+      <tr><td>　Meta 名單廣告</td><td>550,000</td><td>38%</td></tr>
+      <tr><td>　TikTok 名單型廣告（9 月 30,000＋Q4 100,000）</td><td>130,000</td><td>9%</td></tr>
+      <tr><td>　關鍵字</td><td>125,000</td><td>9%</td></tr>
+      <tr><td>　展覽廣告</td><td>20,000</td><td>1%</td></tr>
+      <tr class="hl"><td><b>2C 直營店導客</b></td><td><b>620,000</b></td><td><b>43%</b></td></tr>
+      <tr><td>　Google P Max</td><td>440,000</td><td>30%</td></tr>
+      <tr><td>　Meta 常態</td><td>140,000</td><td>10%</td></tr>
+      <tr><td>　TikTok 曝光型廣告（9 月 10,000＋Q4 30,000）</td><td>40,000</td><td>3%</td></tr>
+      <tr><td><b>總計</b></td><td><b>1,445,000</b></td><td>100%</td></tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<section>
+  <h2>2. 2026 行銷策略時間線</h2>
+  <div class="timeline">
+    <div class="q">
+      <div class="meta"><span class="tag">2025 Q4</span></div>
+      <ul>
+        <li>11 月名單表單加入簡訊驗證，名單從 365 筆降到 251 筆，但 B 級以上從 0 位增加到 7 位。<span class="pivot">從那時起，方向就是名單品質比數量重要。</span></li>
+      </ul>
+    </div>
+    <div class="q">
+      <div class="meta"><span class="tag">2026 Q1</span></div>
+      <ul>
+        <li><span class="pivot">2026 主力目標改為開發 B2B 加盟主</span>，B2C 常態廣告預算大幅縮減。B2C 改為直營店導客：吸引進店人流 → 提高門市營收 → 幫助直營店賣店。</li>
+        <li>試投 30 歲以上公務員、政府人員，成效差，已停止。</li>
+        <li>2 月遇到越南春節，預算減碼，填表意願下降。</li>
+      </ul>
+    </div>
+    <div class="q">
+      <div class="meta"><span class="tag">2026 Q2</span></div>
+      <ul>
+        <li>4/10 上線「小 AQUA」素材。<span class="pivot">決定廣告不寫價格</span>，用模糊方式暗示價格吸引力，先拿到名單再依客戶預算推薦方案。</li>
+        <li>4–5 月 Meta 名單廣告多次被拒登，名單量下降（4 月 131 筆），5 月改用新廣告帳號後恢復。</li>
+      </ul>
+    </div>
+    <div class="q">
+      <div class="meta"><span class="tag">2026 Q3</span></div>
+      <ul>
+        <li>7/6 起<span class="pivot">改為主打「4 億開店方案」，直接寫出價格</span>，搭配 6 個月回本文案。名單量略降，但 B 級客戶從 Q2 的 1 位增加到 Q3 的 2 位。</li>
+      </ul>
+    </div>
+    <div class="q">
+      <div class="meta"><span class="tag">2026 Q4</span></div>
+      <ul>
+        <li>10 月 VIETRF 展覽廣告：86 筆表單，加上現場展覽名單 344 筆。</li>
+        <li><span class="pivot">新增民宿經營者受眾</span>，優先投放峴港、會安、順化、芽莊、富國島、下龍灣等觀光區，原因是先前兩筆成交都是富國島民宿業者。</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>3. 成交客戶</h2>
+  <div class="tbl">
+  <table style="min-width:0">
+    <thead><tr><th>來源</th><th>組數</th><th style="text-align:left">客戶</th></tr></thead>
+    <tbody>
+      <tr><td>Facebook</td><td>4</td><td style="text-align:left;white-space:normal;font-family:var(--f-body)">3 台 7277、4 店、河內加盟店、河內陳先生（新）</td></tr>
+      <tr><td>官方</td><td>1</td><td style="text-align:left">–</td></tr>
+      <tr><td>業務來源</td><td>1</td><td style="text-align:left">–</td></tr>
+      <tr class="hl"><td colspan="3"><b>展覽</b></td></tr>
+      <tr><td>Facebook（09/2026）</td><td>1</td><td style="text-align:left">–</td></tr>
+      <tr><td>展覽現場</td><td>1</td><td style="text-align:left">加盟店</td></tr>
+      <tr><td><b>合計</b></td><td><b>8</b></td><td style="text-align:left">Facebook 共 5 組（63%）</td></tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<section>
+  <h2>4. 預算分布：FB 名單每月的預算區間</h2>
+  <p class="lede">以名單上「預計投資金額」為準，只計有填金額的名單。</p>
+  <div class="chart" id="c1"></div>
+  <div class="tbl">
+  <table>
+    <thead><tr><th>預算區間</th><th>1月</th><th>2月</th><th>3月</th><th>4月</th><th>5月</th><th>6月</th><th>7月</th><th>8月</th><th>9月</th><th>10月</th><th>11月*</th></tr></thead>
+    <tbody id="tb1"></tbody>
+  </table>
+  </div>
+  <p class="note">1–2 月合計：3 億以上 15%、1 億以下 31%。10–11 月合計：3 億以上 23%、1 億以下 28%。1 tỷ（10 億）以上的客人每月只有 0–7 位（0–3%），1–2 月合計 7 位、10–11 月合計 5 位。* 11 月只到 11/11。</p>
+</section>
+
+<section>
+  <h2>5. 潛力客戶數：每月 C1 以上的客戶</h2>
+  <p class="lede">柱子是 C1 以上的人數，深色部分是其中預算 3 億以上的人數。11 月只統計到 11/11。</p>
+  <div class="chart" id="c2"></div>
+</section>
+
+<section>
+  <h2>6. 每月數字</h2>
+  <div class="tbl">
+  <table>
+    <thead><tr><th>月份</th><th>FB 名單</th><th>A</th><th>B</th><th>C1</th><th>C1 以上合計</th><th>C1 以上比例</th><th>其中 3 億以上</th><th>其中 1 tỷ 以上</th><th>FB 3 億以上比例</th><th>FB 1 tỷ 以上</th></tr></thead>
+    <tbody id="tb"></tbody>
+  </table>
+  </div>
+  <p class="note">1 月有 46% 名單沒有分級，所以 1 月的潛力客戶數可能偏低。各級人數只算 FB 名單，所以 8 月 C1 是 19 位，比追蹤表「客戶分類」分頁的 36 位少。10 月展覽名單共 344 筆（A 20、B 36、C 129、D 40、未分級 119），沒有算進表格。</p>
+</section>
+
+<section>
+  <h2>7. C1 以上＋3 億以上：沒有繼續聯繫的原因</h2>
+  <p class="lede">2026/1–11/11 共 <span class="num">51</span> 位。依追蹤表「聯繫進度」的最後一筆紀錄分類。<span class="num">43</span> 位只有一次聯繫紀錄。</p>
+  <div class="tbl">
+  <table>
+    <thead><tr><th>最後狀態</th><th>人數</th><th>比例</th><th>其中 1 tỷ 以上</th><th>說明</th></tr></thead>
+    <tbody>
+      <tr class="hl"><td>傳 Zalo 資料後沒有下一步紀錄</td><td>19</td><td>37%</td><td>4</td><td style="text-align:left">沒有記錄客人有沒有回覆、為什麼停</td></tr>
+      <tr class="hl"><td>約參觀門市／場勘後沒有結果紀錄</td><td>11</td><td>22%</td><td>1</td><td style="text-align:left">不知道客人有沒有來、看完的反應</td></tr>
+      <tr class="hl"><td>報價後沒有後續紀錄</td><td>6</td><td>12%</td><td>1</td><td style="text-align:left">不知道客人對價格的反應</td></tr>
+      <tr><td>有記錄客戶端原因</td><td>9</td><td>18%</td><td>1</td><td style="text-align:left">嫌貴 1、還沒有店面 1、店面 6 個月後才交 1、要先評估地點 1、要跟家人討論 1、離門市太遠 1、實際預算不到 1 億 1、沒有投資打算 1、不感興趣 1</td></tr>
+      <tr><td>11 月仍在跟進</td><td>6</td><td>12%</td><td>1</td><td style="text-align:left">11 月新名單，還在聯繫中</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="note">扣掉 11 月還在跟進的 6 位，45 位中有 36 位（80%）沒有記錄停止聯繫的原因。51 位中有 8 位預算 1 tỷ（10 億）以上，其中 4 位只傳了 Zalo 資料就沒有下一步紀錄。</p>
+  <details>
+    <summary style="cursor:pointer;color:var(--accent);font-weight:700">展開 51 位明細</summary>
+    <div class="tbl" style="margin-top:10px">
+    <table>
+      <thead><tr><th>月份</th><th>分級</th><th>預算</th><th>1 tỷ 以上</th><th>地點</th><th style="text-align:left">最後紀錄</th><th style="text-align:left">分類</th></tr></thead>
+      <tbody id="tb2"></tbody>
+    </table>
+    </div>
+  </details>
+</section>
+
+<section>
+  <h2>8. 其他觀察與可以努力的方向</h2>
+  <div class="tbl">
+  <table style="min-width:640px">
+    <thead><tr><th style="text-align:left">觀察</th><th style="text-align:left">可以努力的方向</th></tr></thead>
+    <tbody>
+      <tr><td style="text-align:left;white-space:normal;font-family:var(--f-body)"><b>參觀門市是關鍵一步，但沒有被追蹤。</b>51 位高預算潛力客戶中，有 16 位被邀請參觀門市或場勘，卻沒有一位記錄參觀結果。</td><td style="text-align:left;white-space:normal;font-family:var(--f-body)">幫我們記錄客戶感興趣的地方，以及不感興趣、拒絕投資的原因。</td></tr>
+      <tr><td style="text-align:left;white-space:normal;font-family:var(--f-body)"><b>客人最想知道的是能賺多少。</b>多位客人要求營收或回本試算，有人擔心月租 6,000 萬能不能打平。廣告中「4 億開店趁現在」的詢問率最高，達 7.72%。</td><td style="text-align:left;white-space:normal;font-family:var(--f-body)">廣告素材往這個方向努力。</td></tr>
+      <tr><td style="text-align:left;white-space:normal;font-family:var(--f-body)"><b>有店面、有場地的客人是主力。</b>51 位中至少 14 位已有店面或空地，2 位本身經營飯店或服務式公寓。已成交的 2 位也是富國島民宿業者。</td><td style="text-align:left;white-space:normal;font-family:var(--f-body)">Q4 已加入宿舍經營者受眾。對這群人主打「加開自助洗衣，增加額外被動收入」。</td></tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<section>
+  <h2>9. 需要業務協助的事</h2>
+  <div class="actions">
+    <div class="act"><h3>記錄停止聯繫的原因</h3><p>高預算潛力客戶有 80% 沒有記錄為什麼停止聯繫。每筆名單結案時，請寫下原因：嫌貴、沒有店面、預算不足、聯絡不上，或選了其他品牌。</p></div>
+    <div class="act"><h3>分享來店參觀的客人回饋</h3><p>來店參觀後的客人回饋，可在週會分享。</p></div>
+    <div class="act"><h3>回報成交和來源</h3><p>請每月提供成交名單，以及客人從哪個管道知道 SESA，行銷才能把預算放到真正有效的地方。</p></div>
+  </div>
+</section>
+
+<section>
+  <h2>10. 未來行銷策略</h2>
+  <ul style="margin:0;padding-left:1.3em;display:flex;flex-direction:column;gap:10px;max-width:65ch">
+    <li><b>策略目標維持重質不重量：</b>數位廣告還是希望找到有預算、且 C1 以上的客戶。</li>
+    <li><b>廣告持續寫出投資金額：</b>Q3 起主打「4 億開店方案」後，FB 名單中預算 3 億以上的比例從 1–2 月的 15% 升到 10–11 月的 23%。繼續用價格篩選客人。</li>
+    <li><b>素材主打能賺多少：</b>客人最關心營收和回本。素材往營收、回本時間的方向發展。</li>
+    <li><b>鎖定有店面、有場地的人：</b>高預算潛力客戶中至少 14 位已有店面或空地。持續投放宿舍經營者等受眾，主打「加開自助洗衣，增加額外被動收入」。</li>
+  </ul>
+</section>
+
+
+<footer>
+  <span>資料來源：越南名單追蹤表（01.2026–11.2026、展覽名單分頁）、上洋 monthly report 26.01–26.10（缺 26.08）、2026 Q1–Q4 Retainer 簽呈。</span>
+  <span>預算區間依客人自填金額換算；「100 triệu」算在 1–3 億區間，「3-500tr」這類縮寫取下限（3 億），「Dưới 1 tỷ」、只寫機台數或只有個位數字的不計入。整理日期 2026/11/12。</span>
+</footer>
+</div>
+
+<script>
+const M=['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月*'];
+const fb=[216,325,482,131,177,227,339,288,332,249,94];
+const pot=[14,45,51,7,27,21,41,21,23,25,10];
+const pot3=[3,7,8,0,2,4,6,8,2,7,4];
+const big=[3,4,7,0,3,6,2,3,6,4,1];
+const bigp=[1.5,1.5,1.7,0,2.4,3.1,0.7,1.2,2.0,1.7,1.2];
+const pot10=[0,0,1,0,1,3,1,1,0,1,0];
+const share=[[36,54,10],[28,53,19],[38,47,15],[34,48,18],[42,44,14],[41,43,16],[43,45,12],[20,51,29],[29,51,20],[31,46,23],[20,58,22]];
+const lv=[[0,0,2,0,12],[0,0,1,1,43],[0,0,0,1,50],[0,0,0,0,7],[0,0,0,0,27],[0,0,0,1,20],[0,0,0,0,41],[0,2,0,0,19],[0,0,0,0,23],[0,0,0,0,25],[0,0,0,0,10]];
+const css=v=>getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+const NS='http://www.w3.org/2000/svg';
+function el(t,a,txt){const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);if(txt!=null)e.textContent=txt;return e}
+
+function chart1(){
+  const W=760,H=310,L=40,R=10,T=30,B=40;
+  const cats=M;const data=share.map((d,i)=>[d[0],d[1],d[2]-bigp[i],bigp[i]]);
+  const n=cats.length,bw=(W-L-R)/n;const s=document.createElementNS(NS,'svg');s.setAttribute('viewBox',`0 0 ${W} ${H}`);
+  const y=v=>T+(H-T-B)*(1-v/100);
+  [0,25,50,75,100].forEach(v=>{s.append(el('line',{x1:L,x2:W-R,y1:y(v),y2:y(v),stroke:css('--line'),'stroke-width':1}));s.append(el('text',{x:L-6,y:y(v)+4,'text-anchor':'end','font-size':11,fill:css('--muted')},v+'%'))});
+  const cols=[css('--low'),css('--mid'),css('--rich'),css('--expo')];
+  data.forEach((d,i)=>{let acc=0;const x=L+i*bw+bw*.18,w=bw*.64;
+    d.forEach((v,j)=>{if(v>0)s.append(el('rect',{x,y:y(acc+v),width:w,height:y(acc)-y(acc+v),fill:cols[j]}));
+      if(j<3)s.append(el('text',{x:x+w/2,y:(y(acc)+y(acc+v))/2+4,'text-anchor':'middle','font-size':11,'font-weight':j===2?700:500,fill:j===2?'#fff':'#14232b'},Math.round(v)+'%'));
+      else s.append(el('text',{x:x+w/2,y:y(100)-6,'text-anchor':'middle','font-size':11,'font-weight':700,fill:css('--expo')},v+'%'));
+      acc+=v});
+    s.append(el('text',{x:x+w/2,y:H-B+16,'text-anchor':'middle','font-size':11,fill:css('--muted')},cats[i]));
+  });
+  const box=document.getElementById('c1');box.innerHTML='';box.append(s);
+  box.insertAdjacentHTML('beforeend',`<div class="legend"><span><i style="background:var(--expo)"></i>1 tỷ（10 億）以上（柱頂數字）</span><span><i style="background:var(--rich)"></i>3 億–1 tỷ</span><span><i style="background:var(--mid)"></i>1–3 億</span><span><i style="background:var(--low)"></i>1 億以下</span></div>`);
+}
+function chart2(){
+  const W=760,H=300,L=40,R=10,T=14,B=40,max=60;
+  const n=M.length,bw=(W-L-R)/n;const s=document.createElementNS(NS,'svg');s.setAttribute('viewBox',`0 0 ${W} ${H}`);
+  const y=v=>T+(H-T-B)*(1-v/max);
+  [0,20,40,60].forEach(v=>{s.append(el('line',{x1:L,x2:W-R,y1:y(v),y2:y(v),stroke:css('--line'),'stroke-width':1}));s.append(el('text',{x:L-6,y:y(v)+4,'text-anchor':'end','font-size':11,fill:css('--muted')},v))});
+  M.forEach((m,i)=>{const x=L+i*bw+bw*.18,w=bw*.64;
+    s.append(el('rect',{x,y:y(pot[i]),width:w,height:y(0)-y(pot[i]),fill:css('--mid')}));
+    s.append(el('rect',{x,y:y(pot3[i]),width:w,height:y(0)-y(pot3[i]),fill:css('--rich')}));
+    if(pot3[i]>=4)s.append(el('text',{x:x+w/2,y:y(pot3[i]/2)+4,'text-anchor':'middle','font-size':10,'font-weight':700,fill:'#fff'},pot3[i]));
+    const top=pot[i];
+    s.append(el('text',{x:x+w/2,y:y(top)-5,'text-anchor':'middle','font-size':11,'font-weight':700,fill:css('--ink')},top));
+    s.append(el('text',{x:x+w/2,y:H-B+16,'text-anchor':'middle','font-size':11,fill:css('--muted')},m));
+  });
+  const box=document.getElementById('c2');box.innerHTML='';box.append(s);
+  box.insertAdjacentHTML('beforeend',`<div class="legend"><span><i style="background:var(--rich)"></i>C1 以上，預算 3 億以上</span><span><i style="background:var(--mid)"></i>C1 以上，其他</span><span>* 11 月只到 11/11</span></div>`);
+}
+function table(){
+  const tb=document.getElementById('tb');tb.innerHTML='';
+  M.forEach((m,i)=>{const tot=fb[i];
+    const tr=document.createElement('tr');if(i>=9)tr.className='hl';
+    tr.innerHTML=`<td>${m}</td><td>${fb[i]}</td>`+[lv[i][0],lv[i][1]+lv[i][2]+lv[i][3],lv[i][4]].map(v=>`<td>${v}</td>`).join('')+`<td><b>${pot[i]}</b></td><td>${(pot[i]/tot*100).toFixed(1)}%</td><td>${pot3[i]}</td><td>${pot10[i]}</td><td>${share[i][2]}%</td><td>${big[i]} 位（${bigp[i]}%）</td>`;
+    tb.append(tr)});
+}
+function table1(){
+  const tb=document.getElementById('tb1');tb.innerHTML='';
+  [['3 億以上',2],['1–3 億',1],['1 億以下',0]].forEach(([lab,j])=>{
+    const tr=document.createElement('tr');if(j===2)tr.className='hl';
+    tr.innerHTML=`<td>${lab}</td>`+share.map(d=>`<td>${d[j]}%</td>`).join('');tb.append(tr)});
+  const tr=document.createElement('tr');
+  tr.innerHTML=`<td>其中 1 tỷ（10 億）以上</td>`+big.map((v,i)=>`<td>${v} 位<br><span style="color:var(--muted);font-size:.8em">${bigp[i]}%</span></td>`).join('');tb.append(tr);
+}
+const Z='傳資料後無紀錄',V='參觀／場勘後無紀錄',Q='報價後無紀錄',C='客戶端原因',F='跟進中';
+const leads=[
+['1月','B2','5 億','河靜','1/13 看過報價，要先評估開店區域需求，再聯繫',C],
+['1月','B2','3 億','胡志明 6 郡','1/13 到客人家場勘 20 m² 店面',V],
+['1月','C1','3 億','河內','1/21 傳資料給客人參考',Z],
+['2月','B2','3 億','峴港','2/7 收到報價嫌貴；推薦轉讓 4 店（12 億），客人說快過年要再考察',C],
+['2月','C1','3 億','河內 Smart City','2/9 約參觀 CH7，客人說之後安排',V],
+['2月','C1','3 億','胡志明大學村','2/26 關心電子支付',Z],
+['2月','C1','5 億','河內富義','2/26 未接，傳洗衣＋洗被組合報價',Q],
+['2月','C1','3 億','胡志明新富','2/27 有店面，約下週參觀 CH2',V],
+['2月','C1','5 億','胡志明芹蒢','3/9 有 300 m² 店面，傳 Zalo',Z],
+['2月','C1','5 億','清化','3/3 有店面，傳小機報價',Q],
+['3月','C1','3–4 億','峴港五行山','3/3 報價 3 台 AQUA，找到店面再談',C],
+['3月','C1','5 億','河內 Smart City','3/5 還沒有店面，要和先生討論',C],
+['3月','C1','10 億','河內東英','3/10 有空地，給 CH7 地址請客人參觀',V],
+['3月','C1','4 億','乂安','3/13 未接，傳 Zalo',Z],
+['3月','C1','3 億','富國島','3/20 報價小 AQUA 96tr／對',Q],
+['3月','C1','3 億','胡志明守德','3/25 約 3/31 參觀 CH10',V],
+['3月','C1','5 億','河內清池','3/31 約參觀 CH7',V],
+['3月','C1','5 億','胡志明新富','3/31 約參觀胡志明門市，時間之後再定',V],
+['5月','C1','30 億','河內河東','5/15 傳統模式，傳 Zalo',Z],
+['5月','C1','5 億','興安 Ecopark','5/22 還沒有店面，傳 Zalo',Z],
+['6月','C1','3 億','河內安慶','6/8 傳方案和利潤試算',Z],
+['6月','C1','10 億','河內 Smart City','6/11 店面 6 個月後交屋，擔心月租 6,000 萬，要看營收試算',C],
+['6月','C1','20 億','綏和','6/24 飯店轉服務式公寓 18 房，傳 Zalo',Z],
+['6月','C1','10 億','胡志明守德','6/29 有 1,600 m² 場地，傳 Zalo',Z],
+['7月','C1','3 億','胡志明新平','7/2 到場勘，客人經營服務式公寓',V],
+['7月','C1','3 億','永隆','7/6 有 9×12 m 店面，傳資料和門市地址',Z],
+['7月','C1','5 億','胡志明新平','7/8 有 8 m 店面，傳資料和門市地址',Z],
+['7月','C1','5 億','河內巴位','7/21 還沒有店面，人口稀疏，傳 Zalo',Z],
+['7月','C1','20 億','河內','7/29 報價小 AQUA 85tr／對',Q],
+['7月','C1','3 億','清化','7/30 有 40 m² 店面，傳 Zalo',Z],
+['8月','C1','5 億','芹苴','8/12 實際資金不到 1 億',C],
+['8月','C1','4 億','平陽','8/17 只是參考，沒有投資打算',C],
+['8月','C1','3 億','峴港','8/24 加 Zalo',Z],
+['8月','C1','5 億','胡志明','8/24 客人忙，加 Zalo',Z],
+['8月','B1','4 億','太原','8/21 洽談 5 台 AQUA，離河內門市 80 km',C],
+['8月','C1','3 億','胡志明 7 郡','8/25 找店面中，傳門市地址',Z],
+['8月','C1','10 億','—','8/25 客人在開車，傳 Zalo',Z],
+['8月','C1','5 億','胡志明新富','9/4 報價 13 kg 小 AQUA 90tr',Q],
+['9月','C1','3 億','胡志明 8 郡','9/23 20 m² 店面，傳報價',Q],
+['9月','C1','3 億','河內','9/25 約參觀 CH7',V],
+['10月','C1','3 億','胡志明大學村','10/5 傳門市地址請客人參觀',V],
+['10月','C1','3 億','河內','10/6 還沒有店面，傳 Zalo',Z],
+['10月','C1','5 億','寧平','10/6 傳設備規格',Z],
+['10月','C1','4 億','峴港','11/11 約見面，客人 11/16 回峴港',F],
+['10月','C1','3–6 億','胡志明 5 郡','10/13 參觀 CH10',V],
+['10月','C1','5 億','河內','10/20 客人說不感興趣',C],
+['10月','C1','10 億','頭頓','11/4 有 150 m² 場地，傳 Zalo',F],
+['11月','C1','5 億','河內','11/11 邀參觀 CH7，客人之後回覆',F],
+['11月','C1','6 億','胡志明守德','11/6 有 115 m² 空地，傳 Zalo',F],
+['11月','C1','4 億','胡志明舊邑','11/10 報價 3 台 13 kg AQUA 280tr',F],
+['11月','C1','8 億','同塔／芹苴／富國島','11/11 還沒有店面，傳 Zalo',F]];
+function table2(){const tb=document.getElementById('tb2');tb.innerHTML='';
+  leads.forEach(r0=>{const tr=document.createElement('tr');
+    const r=[r0[0],r0[1],r0[2],/^(10|20|30) 億$/.test(r0[2])?'✓':'',...r0.slice(3)];
+    tr.innerHTML=r.map((c,i)=>`<td${i>=5?' style="text-align:left;white-space:normal;font-family:var(--f-body)"':(i===4?' style="font-family:var(--f-body)"':'')}>${c}</td>`).join('');tb.append(tr)})}
+const bq=[['Q1',100,20,0,35,110,0],['Q2',150,35,0,35,110,0],['Q3',150,35,0,35,110,170],['Q4',150,35,20,35,110,0]];
+function budget(){
+  const rows=bq.map(r=>{const b=r[1]+r[2]+r[3],c=r[4]+r[5]+r[6];return {q:r[0],r,b,c,t:b+c}});
+  const yb=rows.reduce((a,x)=>a+x.b,0),yc=rows.reduce((a,x)=>a+x.c,0);
+  const all=[...rows,{q:'全年',b:yb,c:yc,t:yb+yc}];
+  const W=760,rowH=34,L=56,R=10,T=6,H=T+all.length*rowH+6;
+  const s=document.createElementNS(NS,'svg');s.setAttribute('viewBox',`0 0 ${W} ${H}`);
+  const x=v=>L+(W-L-R)*v;
+  all.forEach((d,i)=>{const y=T+i*rowH,h=24,pb=d.b/d.t;
+    s.append(el('text',{x:L-8,y:y+h/2+4,'text-anchor':'end','font-size':12,'font-weight':d.q==='全年'?700:500,fill:css('--ink')},d.q));
+    s.append(el('rect',{x:x(0),y,width:x(pb)-x(0),height:h,fill:css('--rich')}));
+    s.append(el('rect',{x:x(pb),y,width:x(1)-x(pb),height:h,fill:css('--low')}));
+    s.append(el('text',{x:x(0)+8,y:y+h/2+4,'font-size':11,'font-weight':700,fill:'#fff'},`2B ${Math.round(pb*100)}% · ${d.b.toLocaleString()}K`));
+    s.append(el('text',{x:x(1)-8,y:y+h/2+4,'text-anchor':'end','font-size':11,'font-weight':700,fill:'#14232b'},`2C ${Math.round((1-pb)*100)}% · ${d.c.toLocaleString()}K`));
+  });
+  const box=document.getElementById('c3');box.innerHTML='';box.append(s);
+  box.insertAdjacentHTML('beforeend',`<div class="legend"><span><i style="background:var(--rich)"></i>2B 加盟主名單</span><span><i style="background:var(--low)"></i>2C 直營店導客</span><span>K = 千元新台幣</span></div>`);
+  const tb=document.getElementById('tb3');tb.innerHTML='';const f=v=>v?(v*1000).toLocaleString():'–';
+  rows.forEach(d=>{const r=d.r;const tr=document.createElement('tr');
+    tr.innerHTML=`<td>${d.q}</td><td>${f(r[1])}</td><td>${f(r[2])}</td><td>${f(r[3])}</td><td><b>${f(d.b)}</b>（${Math.round(d.b/d.t*100)}%）</td><td>${f(r[4])}</td><td>${f(r[5])}</td><td>${f(r[6])}</td><td><b>${f(d.c)}</b>（${Math.round(d.c/d.t*100)}%）</td><td>${f(d.t)}</td>`;tb.append(tr)});
+  const tr=document.createElement('tr');tr.className='hl';
+  tr.innerHTML=`<td>全年</td><td>${f(550)}</td><td>${f(125)}</td><td>${f(20)}</td><td><b>${f(yb)}</b>（${Math.round(yb/(yb+yc)*100)}%）</td><td>${f(140)}</td><td>${f(440)}</td><td>${f(170)}</td><td><b>${f(yc)}</b>（${Math.round(yc/(yb+yc)*100)}%）</td><td>${f(yb+yc)}</td>`;tb.append(tr);
+}
+function draw(){chart1();chart2();table();table1();table2()}
+draw();
+matchMedia('(prefers-color-scheme: dark)').addEventListener('change',draw);
+new MutationObserver(draw).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
+</script>
+
+</html>
