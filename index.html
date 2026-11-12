@@ -61,7 +61,7 @@ tr.hl td{background:var(--accent-soft)}
 .act{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px;display:flex;flex-direction:column;gap:6px;min-width:0}
 .act h3{font-size:.98rem}
 .act p{font-size:.9rem;color:var(--muted)}
-.toc{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 18px;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px 24px;font-size:.88rem}
+.toc{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 18px;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px 24px;font-size:.88rem}
 .toc div{display:flex;flex-direction:column;gap:3px;min-width:0}
 .toc strong{font-size:.75rem;letter-spacing:.08em;color:var(--muted);font-weight:700}
 .toc a{color:var(--ink);text-decoration:none}
@@ -84,6 +84,15 @@ section{scroll-margin-top:16px}
 .ob .dir{color:var(--accent);font-weight:500}
 @media (max-width:600px){.ob{grid-template-columns:1fr}}
 .plain{margin:0;padding-left:1.3em;display:flex;flex-direction:column;gap:10px;max-width:68ch}
+.wrap>*,section>*,.answer>*{min-width:0}
+p,li,.lede,.note,.ob p,.act p{text-wrap:pretty;line-break:strict}
+.tbl td,.tbl th{min-width:0}
+.tbl table[style*="min-width:0"] td:first-child{white-space:normal}
+#s7 th:last-child,#s7 td:last-child{white-space:normal;min-width:260px;text-align:left}
+#s7 .lede{max-width:none}
+.kpi .v{white-space:nowrap}
+.plain{max-width:none!important}
+@media (max-width:600px){.toc{grid-template-columns:1fr 1fr}.kpis{grid-template-columns:1fr 1fr}.kpi .v{font-size:1.3rem}}
 footer{font-size:.8rem;color:var(--muted);border-top:1px solid var(--line);padding-top:16px;display:flex;flex-direction:column;gap:4px}
 </style>
 
@@ -104,7 +113,7 @@ footer{font-size:.8rem;color:var(--muted);border-top:1px solid var(--line);paddi
 <section id="summary">
   <h2>結論</h2>
   <div class="kpis">
-    <div class="kpi"><span class="k">FB 名單預算 3 億以上比例</span><span class="v">15% → 23%</span><span class="s">1–2 月 → 10–11 月</span></div>
+    <div class="kpi"><span class="k">預算 3 億以上占比</span><span class="v">15% → 23%</span><span class="s">1–2 月 → 10–11 月</span></div>
     <div class="kpi"><span class="k">2026 成交</span><span class="v">8 組</span><span class="s">其中 Facebook 5 組</span></div>
     <div class="kpi"><span class="k">2B 廣告預算占比</span><span class="v">57%</span><span class="s">全年 NT$825,000</span></div>
   </div>
