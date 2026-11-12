@@ -23,7 +23,7 @@
   --bg:#0f171b; --surface:#17232a; --ink:#e4edf0; --muted:#97a9b1; --line:#2a3a42;
   --accent:#4fc0cf; --accent-soft:#173a40; --rich:#4fc0cf; --mid:#2f7680; --low:#b8954f; --warn:#e58a62; --expo:#8aa6ef; color-scheme:dark}
 body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15.5px;line-height:1.7}
-.wrap{max-width:860px;margin:0 auto;padding-block:40px 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:44px}
+.wrap{max-width:900px;margin:0 auto;padding-block:40px 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:44px}
 h1,h2,h3{text-wrap:balance;line-height:1.3;margin:0}
 h1{font-size:1.9rem}
 h2{font-size:1.35rem}
@@ -61,6 +61,29 @@ tr.hl td{background:var(--accent-soft)}
 .act{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px;display:flex;flex-direction:column;gap:6px;min-width:0}
 .act h3{font-size:.98rem}
 .act p{font-size:.9rem;color:var(--muted)}
+.toc{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 18px;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px 24px;font-size:.88rem}
+.toc div{display:flex;flex-direction:column;gap:3px;min-width:0}
+.toc strong{font-size:.75rem;letter-spacing:.08em;color:var(--muted);font-weight:700}
+.toc a{color:var(--ink);text-decoration:none}
+.toc a:hover,.toc a:focus-visible{color:var(--accent);text-decoration:underline}
+.part{display:flex;align-items:center;gap:12px;font-size:.8rem;letter-spacing:.12em;color:var(--accent);font-weight:700;margin-bottom:-20px}
+.part::after{content:"";flex:1;height:1px;background:var(--line)}
+h2{display:flex;align-items:baseline;gap:10px}
+h2 .n{font-family:var(--f-num);font-size:.85rem;color:var(--accent);background:var(--accent-soft);border-radius:6px;padding:1px 8px;flex:none}
+section{scroll-margin-top:16px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
+.kpi{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 16px;display:flex;flex-direction:column;gap:2px;min-width:0}
+.kpi .k{font-size:.8rem;color:var(--muted)}
+.kpi .v{font-family:var(--f-num);font-size:1.6rem;font-weight:700;color:var(--accent);line-height:1.2}
+.kpi .s{font-size:.8rem;color:var(--muted)}
+.obs{display:flex;flex-direction:column;gap:12px}
+.ob{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px 18px;display:grid;grid-template-columns:1fr 1fr;gap:6px 24px}
+.ob h3{grid-column:1/-1;font-size:1rem}
+.ob p{font-size:.92rem}
+.ob .lab{display:block;font-size:.75rem;letter-spacing:.08em;color:var(--muted);font-weight:700;margin-bottom:2px}
+.ob .dir{color:var(--accent);font-weight:500}
+@media (max-width:600px){.ob{grid-template-columns:1fr}}
+.plain{margin:0;padding-left:1.3em;display:flex;flex-direction:column;gap:10px;max-width:68ch}
 footer{font-size:.8rem;color:var(--muted);border-top:1px solid var(--line);padding-top:16px;display:flex;flex-direction:column;gap:4px}
 </style>
 
@@ -70,8 +93,21 @@ footer{font-size:.8rem;color:var(--muted);border-top:1px solid var(--line);paddi
   <h1>2026 名單與行銷策略回顧</h1>
 </header>
 
-<section>
+<nav class="toc" aria-label="目錄">
+  <div><strong>開頭</strong><a href="#summary">結論</a></div>
+  <div><strong>策略與成果</strong><a href="#s1">1. 2B／2C 廣告預算比例</a><a href="#s2">2. 2026 行銷策略時間線</a><a href="#s3">3. 成交客戶</a></div>
+  <div><strong>名單數據</strong><a href="#s4">4. 預算分布</a><a href="#s5">5. 潛力客戶數</a><a href="#s6">6. 每月數字</a></div>
+  <div><strong>跟進與觀察</strong><a href="#s7">7. 沒有繼續聯繫的原因</a><a href="#s8">8. 其他觀察與可以努力的方向</a></div>
+  <div><strong>下一步</strong><a href="#s9">9. 需要業務協助的事</a><a href="#s10">10. 未來行銷策略</a></div>
+</nav>
+
+<section id="summary">
   <h2>結論</h2>
+  <div class="kpis">
+    <div class="kpi"><span class="k">FB 名單預算 3 億以上比例</span><span class="v">15% → 23%</span><span class="s">1–2 月 → 10–11 月</span></div>
+    <div class="kpi"><span class="k">2026 成交</span><span class="v">8 組</span><span class="s">其中 Facebook 5 組</span></div>
+    <div class="kpi"><span class="k">2B 廣告預算占比</span><span class="v">57%</span><span class="s">全年 NT$825,000</span></div>
+  </div>
   <div class="answer">
     <ol>
       <li><b>客人的預算沒有變少。</b>FB 名單中預算 3 億越盾以上的比例，1–2 月合計 <span class="num">15%</span>，10–11 月合計 <span class="num">23%</span>。1 tỷ（10 億）以上客人每月 0–7 位，1–2 月合計 7 位、10–11 月合計 5 位，前後差不多。</li>
@@ -81,8 +117,9 @@ footer{font-size:.8rem;color:var(--muted);border-top:1px solid var(--line);paddi
   <p class="note">潛力客戶的定義：C1 以上（A、B1–B3、C1）。</p>
 </section>
 
-<section>
-  <h2>1. 2B／2C 廣告預算比例</h2>
+<div class="part">策略與成果</div>
+<section id="s1">
+  <h2><span class="n">1</span>2B／2C 廣告預算比例</h2>
   <div class="tbl">
   <table style="min-width:0">
     <thead><tr><th>2026 全年（NT$，含佣稅）</th><th>金額</th><th>比例</th></tr></thead>
@@ -102,8 +139,8 @@ footer{font-size:.8rem;color:var(--muted);border-top:1px solid var(--line);paddi
   </div>
 </section>
 
-<section>
-  <h2>2. 2026 行銷策略時間線</h2>
+<section id="s2">
+  <h2><span class="n">2</span>2026 行銷策略時間線</h2>
   <div class="timeline">
     <div class="q">
       <div class="meta"><span class="tag">2025 Q4</span></div>
@@ -142,8 +179,8 @@ footer{font-size:.8rem;color:var(--muted);border-top:1px solid var(--line);paddi
   </div>
 </section>
 
-<section>
-  <h2>3. 成交客戶</h2>
+<section id="s3">
+  <h2><span class="n">3</span>成交客戶</h2>
   <div class="tbl">
   <table style="min-width:0">
     <thead><tr><th>來源</th><th>組數</th><th style="text-align:left">客戶</th></tr></thead>
@@ -160,8 +197,9 @@ footer{font-size:.8rem;color:var(--muted);border-top:1px solid var(--line);paddi
   </div>
 </section>
 
-<section>
-  <h2>4. 預算分布：FB 名單每月的預算區間</h2>
+<div class="part">名單數據</div>
+<section id="s4">
+  <h2><span class="n">4</span>預算分布：FB 名單每月的預算區間</h2>
   <p class="lede">以名單上「預計投資金額」為準，只計有填金額的名單。</p>
   <div class="chart" id="c1"></div>
   <div class="tbl">
@@ -173,14 +211,14 @@ footer{font-size:.8rem;color:var(--muted);border-top:1px solid var(--line);paddi
   <p class="note">1–2 月合計：3 億以上 15%、1 億以下 31%。10–11 月合計：3 億以上 23%、1 億以下 28%。1 tỷ（10 億）以上的客人每月只有 0–7 位（0–3%），1–2 月合計 7 位、10–11 月合計 5 位。* 11 月只到 11/11。</p>
 </section>
 
-<section>
-  <h2>5. 潛力客戶數：每月 C1 以上的客戶</h2>
+<section id="s5">
+  <h2><span class="n">5</span>潛力客戶數：每月 C1 以上的客戶</h2>
   <p class="lede">柱子是 C1 以上的人數，深色部分是其中預算 3 億以上的人數。11 月只統計到 11/11。</p>
   <div class="chart" id="c2"></div>
 </section>
 
-<section>
-  <h2>6. 每月數字</h2>
+<section id="s6">
+  <h2><span class="n">6</span>每月數字</h2>
   <div class="tbl">
   <table>
     <thead><tr><th>月份</th><th>FB 名單</th><th>A</th><th>B</th><th>C1</th><th>C1 以上合計</th><th>C1 以上比例</th><th>其中 3 億以上</th><th>其中 1 tỷ 以上</th><th>FB 3 億以上比例</th><th>FB 1 tỷ 以上</th></tr></thead>
@@ -190,8 +228,9 @@ footer{font-size:.8rem;color:var(--muted);border-top:1px solid var(--line);paddi
   <p class="note">1 月有 46% 名單沒有分級，所以 1 月的潛力客戶數可能偏低。各級人數只算 FB 名單，所以 8 月 C1 是 19 位，比追蹤表「客戶分類」分頁的 36 位少。10 月展覽名單共 344 筆（A 20、B 36、C 129、D 40、未分級 119），沒有算進表格。</p>
 </section>
 
-<section>
-  <h2>7. C1 以上＋3 億以上：沒有繼續聯繫的原因</h2>
+<div class="part">跟進與觀察</div>
+<section id="s7">
+  <h2><span class="n">7</span>C1 以上＋3 億以上：沒有繼續聯繫的原因</h2>
   <p class="lede">2026/1–11/11 共 <span class="num">51</span> 位。依追蹤表「聯繫進度」的最後一筆紀錄分類。<span class="num">43</span> 位只有一次聯繫紀錄。</p>
   <div class="tbl">
   <table>
@@ -217,22 +256,18 @@ footer{font-size:.8rem;color:var(--muted);border-top:1px solid var(--line);paddi
   </details>
 </section>
 
-<section>
-  <h2>8. 其他觀察與可以努力的方向</h2>
-  <div class="tbl">
-  <table style="min-width:640px">
-    <thead><tr><th style="text-align:left">觀察</th><th style="text-align:left">可以努力的方向</th></tr></thead>
-    <tbody>
-      <tr><td style="text-align:left;white-space:normal;font-family:var(--f-body)"><b>參觀門市是關鍵一步，但沒有被追蹤。</b>51 位高預算潛力客戶中，有 16 位被邀請參觀門市或場勘，卻沒有一位記錄參觀結果。</td><td style="text-align:left;white-space:normal;font-family:var(--f-body)">幫我們記錄客戶感興趣的地方，以及不感興趣、拒絕投資的原因。</td></tr>
-      <tr><td style="text-align:left;white-space:normal;font-family:var(--f-body)"><b>客人最想知道的是能賺多少。</b>多位客人要求營收或回本試算，有人擔心月租 6,000 萬能不能打平。廣告中「4 億開店趁現在」的詢問率最高，達 7.72%。</td><td style="text-align:left;white-space:normal;font-family:var(--f-body)">廣告素材往這個方向努力。</td></tr>
-      <tr><td style="text-align:left;white-space:normal;font-family:var(--f-body)"><b>有店面、有場地的客人是主力。</b>51 位中至少 14 位已有店面或空地，2 位本身經營飯店或服務式公寓。已成交的 2 位也是富國島民宿業者。</td><td style="text-align:left;white-space:normal;font-family:var(--f-body)">Q4 已加入宿舍經營者受眾。對這群人主打「加開自助洗衣，增加額外被動收入」。</td></tr>
-    </tbody>
-  </table>
+<section id="s8">
+  <h2><span class="n">8</span>其他觀察與可以努力的方向</h2>
+  <div class="obs">
+    <div class="ob"><h3>參觀門市是關鍵一步，但沒有被追蹤。</h3><p><span class="lab">觀察</span>51 位高預算潛力客戶中，有 16 位被邀請參觀門市或場勘，卻沒有一位記錄參觀結果。</p><p class="dir"><span class="lab">可以努力的方向</span>幫我們記錄客戶感興趣的地方，以及不感興趣、拒絕投資的原因。</p></div>
+    <div class="ob"><h3>客人最想知道的是能賺多少。</h3><p><span class="lab">觀察</span>多位客人要求營收或回本試算，有人擔心月租 6,000 萬能不能打平。廣告中「4 億開店趁現在」的詢問率最高，達 7.72%。</p><p class="dir"><span class="lab">可以努力的方向</span>廣告素材往這個方向努力。</p></div>
+    <div class="ob"><h3>有店面、有場地的客人是主力。</h3><p><span class="lab">觀察</span>51 位中至少 14 位已有店面或空地，2 位本身經營飯店或服務式公寓。已成交的 2 位也是富國島民宿業者。</p><p class="dir"><span class="lab">可以努力的方向</span>Q4 已加入宿舍經營者受眾。對這群人主打「加開自助洗衣，增加額外被動收入」。</p></div>
   </div>
 </section>
 
-<section>
-  <h2>9. 需要業務協助的事</h2>
+<div class="part">下一步</div>
+<section id="s9">
+  <h2><span class="n">9</span>需要業務協助的事</h2>
   <div class="actions">
     <div class="act"><h3>記錄停止聯繫的原因</h3><p>高預算潛力客戶有 80% 沒有記錄為什麼停止聯繫。每筆名單結案時，請寫下原因：嫌貴、沒有店面、預算不足、聯絡不上，或選了其他品牌。</p></div>
     <div class="act"><h3>分享來店參觀的客人回饋</h3><p>來店參觀後的客人回饋，可在週會分享。</p></div>
@@ -240,9 +275,9 @@ footer{font-size:.8rem;color:var(--muted);border-top:1px solid var(--line);paddi
   </div>
 </section>
 
-<section>
-  <h2>10. 未來行銷策略</h2>
-  <ul style="margin:0;padding-left:1.3em;display:flex;flex-direction:column;gap:10px;max-width:65ch">
+<section id="s10">
+  <h2><span class="n">10</span>未來行銷策略</h2>
+  <ul class="plain">
     <li><b>策略目標維持重質不重量：</b>數位廣告還是希望找到有預算、且 C1 以上的客戶。</li>
     <li><b>廣告持續寫出投資金額：</b>Q3 起主打「4 億開店方案」後，FB 名單中預算 3 億以上的比例從 1–2 月的 15% 升到 10–11 月的 23%。繼續用價格篩選客人。</li>
     <li><b>素材主打能賺多少：</b>客人最關心營收和回本。素材往營收、回本時間的方向發展。</li>
